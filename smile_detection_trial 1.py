@@ -1,16 +1,16 @@
 import cv2
 
 # creating objects of class obtained from opencv lib
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')   
 smile_cascade = cv2.CascadeClassifier('haarcascade_smile.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
 # def detect fn
-def detect(gray,frame):
-    faces=face_cascade.detectMultiScale(gray, 1.3, 5)
-    # faces return turple of x,y,w,h of face detected
+def detect(gray,frame):  
+    face=face_cascade.detectMultiScale(gray, 1.3, 5) 
+    # face return turple of x,y,width,height of face detected
    
-    for (x,y,w,h) in faces:
+    for (x,y,w,h) in face:
         cv2.rectangle(frame, (x, y), (x+w, y+h),(255,0,0),2)
         # above line creates rectangle on the face in color image
        
@@ -32,14 +32,14 @@ def detect(gray,frame):
 video_capture= cv2.VideoCapture(0)
 # for turning on webcam
 
-# infinite loop 
+# infinite loop for live detection
 while True:
     _,frame = video_capture.read()
-    gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY) #converting colored image frame to grayscale image
     canvas = detect(gray,frame)
     cv2.imshow('Video',canvas)
   
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'):  #press "q" to break the infinite loop 
         break
 video_capture.release()
 cv2.destroyAllWindows()
