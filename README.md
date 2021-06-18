@@ -17,3 +17,7 @@ The code uses an object detection algorithm known as **Haar** feature based **Ca
 
 By doing above steps Code will be compiled and a the detection will start.
 To stop the detection press ```q```.
+
+
+
+Licensed under the [MIT License](LICENSE).
