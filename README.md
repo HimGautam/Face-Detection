@@ -1,5 +1,5 @@
 # Face Detection
-Opencv implementation of face and smile detection using [Haar Cascade Classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html).
+Opencv implementation of face detection using [Haar Cascade Classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html).
 
 ![detection](https://user-images.githubusercontent.com/70597091/122572728-a435cf00-d06b-11eb-8cb7-45466600c6b7.gif)
 
